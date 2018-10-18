@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60BC2032EC23494790FFD9F6 /* Pods_Soleek_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EA91A2B6BCAF733D2BF00E /* Pods_Soleek_Task.framework */; };
 		EF3E2EC121792AAC0086D0D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E2EC021792AAC0086D0D0 /* AppDelegate.swift */; };
-		EF3E2EC321792AAC0086D0D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E2EC221792AAC0086D0D0 /* ViewController.swift */; };
+		EF3E2EC321792AAC0086D0D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3E2EC221792AAC0086D0D0 /* SignInViewController.swift */; };
 		EF3E2EC621792AAC0086D0D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2EC421792AAC0086D0D0 /* Main.storyboard */; };
 		EF3E2EC821792AAD0086D0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2EC721792AAD0086D0D0 /* Assets.xcassets */; };
 		EF3E2ECB21792AAD0086D0D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2EC921792AAD0086D0D0 /* LaunchScreen.storyboard */; };
+		EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD375C217934D100D119B8 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332227239E32276987F37CCF /* Pods-Soleek Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soleek Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-Soleek Task/Pods-Soleek Task.release.xcconfig"; sourceTree = "<group>"; };
+		5F2A76F4E8BD01C941F0FBF1 /* Pods-Soleek Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soleek Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Soleek Task/Pods-Soleek Task.debug.xcconfig"; sourceTree = "<group>"; };
+		B8EA91A2B6BCAF733D2BF00E /* Pods_Soleek_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soleek_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3E2EBD21792AAC0086D0D0 /* Soleek Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Soleek Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3E2EC021792AAC0086D0D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF3E2EC221792AAC0086D0D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF3E2EC221792AAC0086D0D0 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		EF3E2EC521792AAC0086D0D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF3E2EC721792AAD0086D0D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF3E2ECA21792AAD0086D0D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF3E2ECC21792AAD0086D0D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFAD375C217934D100D119B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BC2032EC23494790FFD9F6 /* Pods_Soleek_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C3307D2BF1F1FA06B12FF7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F2A76F4E8BD01C941F0FBF1 /* Pods-Soleek Task.debug.xcconfig */,
+				332227239E32276987F37CCF /* Pods-Soleek Task.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B463D5F0F688BB0A74C0269 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8EA91A2B6BCAF733D2BF00E /* Pods_Soleek_Task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF3E2EB421792AAC0086D0D0 = {
 			isa = PBXGroup;
 			children = (
 				EF3E2EBF21792AAC0086D0D0 /* Soleek Task */,
 				EF3E2EBE21792AAC0086D0D0 /* Products */,
+				5C3307D2BF1F1FA06B12FF7E /* Pods */,
+				8B463D5F0F688BB0A74C0269 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,55 @@
 		EF3E2EBF21792AAC0086D0D0 /* Soleek Task */ = {
 			isa = PBXGroup;
 			children = (
-				EF3E2EC021792AAC0086D0D0 /* AppDelegate.swift */,
-				EF3E2EC221792AAC0086D0D0 /* ViewController.swift */,
-				EF3E2EC421792AAC0086D0D0 /* Main.storyboard */,
-				EF3E2EC721792AAD0086D0D0 /* Assets.xcassets */,
-				EF3E2EC921792AAD0086D0D0 /* LaunchScreen.storyboard */,
 				EF3E2ECC21792AAD0086D0D0 /* Info.plist */,
+				EF3E2ED221792F880086D0D0 /* Supporting Files */,
+				EF3E2ED7217933280086D0D0 /* Model */,
+				EF3E2ED62179331F0086D0D0 /* View Model */,
+				EF3E2ED5217932EF0086D0D0 /* View Controller */,
+				EF3E2ED8217933510086D0D0 /* View */,
 			);
 			path = "Soleek Task";
+			sourceTree = "<group>";
+		};
+		EF3E2ED221792F880086D0D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E2EC021792AAC0086D0D0 /* AppDelegate.swift */,
+				EF3E2EC921792AAD0086D0D0 /* LaunchScreen.storyboard */,
+				EF3E2EC721792AAD0086D0D0 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF3E2ED5217932EF0086D0D0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E2EC221792AAC0086D0D0 /* SignInViewController.swift */,
+				EFAD375C217934D100D119B8 /* SignUpViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		EF3E2ED62179331F0086D0D0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		EF3E2ED7217933280086D0D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF3E2ED8217933510086D0D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF3E2EC421792AAC0086D0D0 /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF3E2ECF21792AAD0086D0D0 /* Build configuration list for PBXNativeTarget "Soleek Task" */;
 			buildPhases = (
+				A28129FB2E0B9747690A895C /* [CP] Check Pods Manifest.lock */,
 				EF3E2EB921792AAC0086D0D0 /* Sources */,
 				EF3E2EBA21792AAC0086D0D0 /* Frameworks */,
 				EF3E2EBB21792AAC0086D0D0 /* Resources */,
+				497EBA459C994B08C92AB202 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +199,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		497EBA459C994B08C92AB202 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Soleek Task/Pods-Soleek Task-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Soleek Task/Pods-Soleek Task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A28129FB2E0B9747690A895C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Soleek Task-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF3E2EB921792AAC0086D0D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3E2EC321792AAC0086D0D0 /* ViewController.swift in Sources */,
+				EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */,
+				EF3E2EC321792AAC0086D0D0 /* SignInViewController.swift in Sources */,
 				EF3E2EC121792AAC0086D0D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +391,7 @@
 		};
 		EF3E2ED021792AAD0086D0D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F2A76F4E8BD01C941F0FBF1 /* Pods-Soleek Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +410,7 @@
 		};
 		EF3E2ED121792AAD0086D0D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 332227239E32276987F37CCF /* Pods-Soleek Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
