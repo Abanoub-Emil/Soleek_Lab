@@ -14,6 +14,8 @@
 		EF3E2EC821792AAD0086D0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2EC721792AAD0086D0D0 /* Assets.xcassets */; };
 		EF3E2ECB21792AAD0086D0D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3E2EC921792AAD0086D0D0 /* LaunchScreen.storyboard */; };
 		EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD375C217934D100D119B8 /* SignUpViewController.swift */; };
+		EFAD376121793E5100D119B8 /* FireDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376021793E5100D119B8 /* FireDatabase.swift */; };
+		EFAD376321793E7600D119B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376221793E7600D119B8 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EF3E2ECA21792AAD0086D0D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF3E2ECC21792AAD0086D0D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAD375C217934D100D119B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		EFAD376021793E5100D119B8 /* FireDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireDatabase.swift; sourceTree = "<group>"; };
+		EFAD376221793E7600D119B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		EF3E2ED62179331F0086D0D0 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFAD376021793E5100D119B8 /* FireDatabase.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		EF3E2ED7217933280086D0D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFAD376221793E7600D119B8 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAD376121793E5100D119B8 /* FireDatabase.swift in Sources */,
 				EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */,
 				EF3E2EC321792AAC0086D0D0 /* SignInViewController.swift in Sources */,
+				EFAD376321793E7600D119B8 /* User.swift in Sources */,
 				EF3E2EC121792AAC0086D0D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
