@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import SwiftyJSON
 
 class FirebaseLogic {
     var ref:DatabaseReference!
@@ -19,31 +20,42 @@ class FirebaseLogic {
         val=[:]
     }
     
-    func savetoFire(obj:User) {
-        let child1 = self.ref.child("Inova").child("Greetings").childByAutoId()
+    func savetoFire(obj: User) {
         
-        child1.setValue("Hello \(obj.email ?? "inova")")
-       
+//        let child1 = self.ref.child("Inova").child("Greetings").childByAutoId()
+//
+//        child1.setValue("Hello \(obj.email ?? "inova")")
+        if obj.email == nil || obj.password == nil {
+            print("no fetched data")
+            return
+        }
         
-        let msg:Dictionary = ["My Name":obj.email!,
-                              "Company Name":obj.password! ,
-                              "Post Time":ServerValue.timestamp()]
-                               as [String:Any]
+        let msg:Dictionary = ["Email":obj.email!,
+                              "Password":obj.password!] as [String:Any]
         
-        self.ref.child("Inova").child("Info").setValue(msg)
+        self.ref.child("Users").childByAutoId().setValue(msg)
         
     }
     
-    func showFromFire(subChild:String) {
-        
-        self.ref.child("Inova").child("Info").observeSingleEvent(of: .value, with: { (snapshot) in
+    func getFromFire(success:@escaping ([User]) -> Void) {
+        var allUsers = [User]()
+        self.ref.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
             let xval = snapshot.value as? NSDictionary
-            for (key, value) in xval! {
-                self.val[key]=value
-                print("\(key) : \(value)")
-                
+            if xval != nil{
+               
+                for (key, value) in xval! {
+                    let myUser = User()
+                    self.val[key]=value
+                    //                print("\(key) : \(value)")
+                    let resJson = JSON(value)
+                    myUser.email = resJson["Email"].stringValue
+                    myUser.password = resJson["Password"].stringValue
+                    
+                    allUsers.append(myUser)
+                }
+                success(allUsers)
             }
-            })
+        })
         { (error) in
             print(error.localizedDescription)
         }

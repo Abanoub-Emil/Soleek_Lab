@@ -16,6 +16,12 @@
 		EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD375C217934D100D119B8 /* SignUpViewController.swift */; };
 		EFAD376121793E5100D119B8 /* FireDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376021793E5100D119B8 /* FireDatabase.swift */; };
 		EFAD376321793E7600D119B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376221793E7600D119B8 /* User.swift */; };
+		EFAD376721794E0C00D119B8 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376621794E0C00D119B8 /* CountriesTableViewController.swift */; };
+		EFAD3769217A0C4700D119B8 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAD3768217A0C4700D119B8 /* SignUpStoryboard.storyboard */; };
+		EFAD376B217A0C5D00D119B8 /* CountriesStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAD376A217A0C5D00D119B8 /* CountriesStoryBoard.storyboard */; };
+		EFAD376E217A0E9800D119B8 /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD376D217A0E9800D119B8 /* AFWrapper.swift */; };
+		EFAD3770217A147800D119B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAD376F217A147700D119B8 /* GoogleService-Info.plist */; };
+		EFAD3772217A2BED00D119B8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAD3771217A2BED00D119B8 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		EFAD375C217934D100D119B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EFAD376021793E5100D119B8 /* FireDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireDatabase.swift; sourceTree = "<group>"; };
 		EFAD376221793E7600D119B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFAD376621794E0C00D119B8 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
+		EFAD3768217A0C4700D119B8 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
+		EFAD376A217A0C5D00D119B8 /* CountriesStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountriesStoryBoard.storyboard; sourceTree = "<group>"; };
+		EFAD376D217A0E9800D119B8 /* AFWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
+		EFAD376F217A147700D119B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFAD3771217A2BED00D119B8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 		EF3E2EBF21792AAC0086D0D0 /* Soleek Task */ = {
 			isa = PBXGroup;
 			children = (
+				EFAD376F217A147700D119B8 /* GoogleService-Info.plist */,
+				EFAD376C217A0D7700D119B8 /* AlamoFireWrapper */,
 				EF3E2ECC21792AAD0086D0D0 /* Info.plist */,
 				EF3E2ED221792F880086D0D0 /* Supporting Files */,
 				EF3E2ED7217933280086D0D0 /* Model */,
@@ -109,6 +123,7 @@
 			children = (
 				EF3E2EC221792AAC0086D0D0 /* SignInViewController.swift */,
 				EFAD375C217934D100D119B8 /* SignUpViewController.swift */,
+				EFAD376621794E0C00D119B8 /* CountriesTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -117,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAD376021793E5100D119B8 /* FireDatabase.swift */,
+				EFAD3771217A2BED00D119B8 /* SignInViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -133,8 +149,18 @@
 			isa = PBXGroup;
 			children = (
 				EF3E2EC421792AAC0086D0D0 /* Main.storyboard */,
+				EFAD3768217A0C4700D119B8 /* SignUpStoryboard.storyboard */,
+				EFAD376A217A0C5D00D119B8 /* CountriesStoryBoard.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		EFAD376C217A0D7700D119B8 /* AlamoFireWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				EFAD376D217A0E9800D119B8 /* AFWrapper.swift */,
+			);
+			path = AlamoFireWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3E2ECB21792AAD0086D0D0 /* LaunchScreen.storyboard in Resources */,
+				EFAD376B217A0C5D00D119B8 /* CountriesStoryBoard.storyboard in Resources */,
+				EFAD3769217A0C4700D119B8 /* SignUpStoryboard.storyboard in Resources */,
 				EF3E2EC821792AAD0086D0D0 /* Assets.xcassets in Resources */,
 				EF3E2EC621792AAC0086D0D0 /* Main.storyboard in Resources */,
+				EFAD3770217A147800D119B8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,13 +242,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Soleek Task/Pods-Soleek Task-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -257,7 +290,10 @@
 				EFAD375D217934D100D119B8 /* SignUpViewController.swift in Sources */,
 				EF3E2EC321792AAC0086D0D0 /* SignInViewController.swift in Sources */,
 				EFAD376321793E7600D119B8 /* User.swift in Sources */,
+				EFAD3772217A2BED00D119B8 /* SignInViewModel.swift in Sources */,
+				EFAD376721794E0C00D119B8 /* CountriesTableViewController.swift in Sources */,
 				EF3E2EC121792AAC0086D0D0 /* AppDelegate.swift in Sources */,
+				EFAD376E217A0E9800D119B8 /* AFWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MX33C5A88B;
 				INFOPLIST_FILE = "Soleek Task/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WMAD.Soleek-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,6 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MX33C5A88B;
 				INFOPLIST_FILE = "Soleek Task/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,7 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WMAD.Soleek-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

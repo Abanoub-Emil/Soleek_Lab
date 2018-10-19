@@ -10,6 +10,12 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var userEmail: UITextField!
+    
+    @IBOutlet weak var userPassword: UITextField!
+    
+    @IBOutlet weak var confirmUserPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +24,15 @@ class SignUpViewController: UIViewController {
 
    
     
-
+    @IBAction func signIn(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func signUp(_ sender: UIButton) {
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
