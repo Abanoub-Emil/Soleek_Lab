@@ -14,7 +14,7 @@ class AFWrapper: NSObject {
     class func requestGETURL(_ strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
         Alamofire.request(strURL).responseJSON { (responseObject) -> Void in
             
-            print(responseObject)
+//            print(responseObject)
             
             if responseObject.result.isSuccess {
                 let resJson = JSON(responseObject.result.value!)

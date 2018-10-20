@@ -7,45 +7,33 @@
 //
 
 import UIKit
+import SwiftyJSON
+import SDWebImage
 
 class CountriesTableViewController: UITableViewController {
-
+    var allCountries = [Country]()
+    let countriesURL = "https://www.androidbegin.com/tutorial/jsonparsetutorial.txt"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        AFWrapper.requestGETURL(countriesURL, success: { (json) in
+            let worldPopulation = JSON(json)["worldpopulation"]
+           
+            for country in worldPopulation.arrayValue {
+                let myCountry = Country()
+                myCountry.name = country["country"].stringValue
+                myCountry.flag = country["flag"].stringValue
+                self.allCountries.append(myCountry)
+            }
+            self.tableView.reloadData()
+            }) { (Error) in
+                print(Error.localizedDescription)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+ 
+   
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,3 +81,35 @@ class CountriesTableViewController: UITableViewController {
     */
 
 }
+// MARK: - Table view data source
+
+extension CountriesTableViewController{
+    
+    
+   
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return allCountries.count
+    }
+    
+    
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+     cell.textLabel?.text = allCountries[indexPath.row].name
+        cell.imageView?.sd_setImage(with: URL(string: allCountries[indexPath.row].flag!), placeholderImage: UIImage(named: "appIcon.png"))
+     return cell
+     }
+    
+    
+    
+}
+
+
+extension CountriesTableViewController {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+

@@ -37,7 +37,7 @@ class FirebaseLogic {
         
     }
     
-    func getFromFire(success:@escaping ([User]) -> Void) {
+    func getFromFire(success:@escaping ([User]?) -> Void) {
         var allUsers = [User]()
         self.ref.child("Users").observeSingleEvent(of: .value, with: { (snapshot) in
             let xval = snapshot.value as? NSDictionary
@@ -57,7 +57,7 @@ class FirebaseLogic {
             }
         })
         { (error) in
-            print(error.localizedDescription)
+            success(nil)
         }
     }
     

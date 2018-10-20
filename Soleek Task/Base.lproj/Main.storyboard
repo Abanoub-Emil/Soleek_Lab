@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleek" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-A7-fm0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="207.33333333333334"/>
+                                <rect key="frame" x="32" y="32" width="350" height="175.33333333333334"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3zd-A7-fm0" secondAttribute="height" multiplier="2:1" id="WnD-Ts-dcH"/>
                                 </constraints>
@@ -63,22 +63,29 @@
                                 </state>
                                 <connections>
                                     <action selector="signUp:" destination="ZRZ-Wc-OC8" eventType="touchUpInside" id="G7T-8a-nol"/>
+                                    <segue destination="bBI-bG-PpL" kind="presentation" identifier="signInToSignUp" id="Phz-i7-BW4"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fbf-97-yB0">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.42436957460000002" green="0.65093433479999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.89262869925706212" green="0.91574647709921586" blue="0.95586135786802029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3zd-A7-fm0" firstAttribute="top" secondItem="q24-uS-IcI" secondAttribute="top" id="0Gn-Jk-qlt"/>
+                            <constraint firstItem="3zd-A7-fm0" firstAttribute="top" secondItem="q24-uS-IcI" secondAttribute="top" constant="32" id="0Gn-Jk-qlt"/>
                             <constraint firstItem="1Ge-SW-8ja" firstAttribute="trailing" secondItem="OqO-r9-MTe" secondAttribute="trailing" constant="32" id="3za-bw-HUW"/>
+                            <constraint firstItem="Fbf-97-yB0" firstAttribute="centerX" secondItem="q24-uS-IcI" secondAttribute="centerX" id="8z8-sp-M4Z"/>
                             <constraint firstItem="OqO-r9-MTe" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" constant="32" id="9HN-hV-Rrk"/>
                             <constraint firstItem="OqO-r9-MTe" firstAttribute="top" secondItem="Uz0-bH-V8D" secondAttribute="bottom" constant="16" id="Avr-Kc-LX5"/>
-                            <constraint firstItem="1Ge-SW-8ja" firstAttribute="trailing" secondItem="3zd-A7-fm0" secondAttribute="trailing" id="CoR-9d-cVq"/>
+                            <constraint firstItem="1Ge-SW-8ja" firstAttribute="trailing" secondItem="3zd-A7-fm0" secondAttribute="trailing" constant="32" id="CoR-9d-cVq"/>
                             <constraint firstItem="LqB-74-gFc" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" constant="32" id="Hcu-pP-WmV"/>
                             <constraint firstItem="Hlk-um-zBF" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" constant="32" id="IFm-Bm-PmR"/>
-                            <constraint firstItem="3zd-A7-fm0" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" id="LBf-1u-6Of"/>
+                            <constraint firstItem="3zd-A7-fm0" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" constant="32" id="LBf-1u-6Of"/>
                             <constraint firstItem="LqB-74-gFc" firstAttribute="top" secondItem="OqO-r9-MTe" secondAttribute="bottom" constant="32" id="M8j-n7-ElT"/>
                             <constraint firstItem="Uz0-bH-V8D" firstAttribute="top" secondItem="4cv-hm-GGn" secondAttribute="bottom" constant="16" id="TaU-5A-huZ"/>
                             <constraint firstItem="1Ge-SW-8ja" firstAttribute="trailing" secondItem="4cv-hm-GGn" secondAttribute="trailing" constant="32" id="Wvq-Vl-7Me"/>
+                            <constraint firstItem="Fbf-97-yB0" firstAttribute="centerY" secondItem="q24-uS-IcI" secondAttribute="centerY" id="aZ9-Mv-sUg"/>
                             <constraint firstItem="Uz0-bH-V8D" firstAttribute="leading" secondItem="1Ge-SW-8ja" secondAttribute="leading" constant="32" id="hau-7g-M49"/>
                             <constraint firstItem="1Ge-SW-8ja" firstAttribute="trailing" secondItem="Hlk-um-zBF" secondAttribute="trailing" constant="32" id="i5z-EC-BjB"/>
                             <constraint firstItem="4cv-hm-GGn" firstAttribute="top" secondItem="3zd-A7-fm0" secondAttribute="bottom" constant="8" id="kQM-B5-aTZ"/>
@@ -93,24 +100,17 @@
                     <connections>
                         <outlet property="userEmail" destination="Uz0-bH-V8D" id="CKq-Ne-nHo"/>
                         <outlet property="userPassword" destination="OqO-r9-MTe" id="RMt-cr-OaA"/>
+                        <outlet property="waitingSpinner" destination="Fbf-97-yB0" id="43a-qF-72P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oC-fK-JP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186" y="131"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="1zZ-u6-dU1">
-            <objects>
-                <viewControllerPlaceholder id="yEC-6c-sTD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rJd-lE-zNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="778" y="159"/>
-        </scene>
-        <!--Storyboard Reference-->
+        <!--SignUpStoryboard-->
         <scene sceneID="pnD-x4-oAM">
             <objects>
-                <viewControllerPlaceholder id="bBI-bG-PpL" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignUpStoryboard" id="bBI-bG-PpL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0n-ie-1C8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="778" y="209"/>
