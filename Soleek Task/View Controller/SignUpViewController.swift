@@ -83,7 +83,7 @@ class SignUpViewController: UIViewController {
         }
         
         if userEmail.text == "" || userPassword.text == "" {
-            showWarning(warningMsg: "Please Ente Missing Fields")
+            showWarning(warningMsg: "Please Enter Missing Fields")
             return true
         }
         user.email = userEmail.text
