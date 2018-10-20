@@ -10,6 +10,9 @@ pod 'Firebase/Database'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.7'
 pod 'SDWebImage', '~> 4.0'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+
 
   # Pods for Soleek Task
 

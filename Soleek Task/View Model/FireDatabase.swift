@@ -61,8 +61,5 @@ class FirebaseLogic {
         }
     }
     
-    func deleteFromFire(subChild:String){
-        self.ref.child("Inova").child("Greetings").removeValue()
-        self.ref.child("Inova").child("Info").removeValue()
-    }
+    
 }

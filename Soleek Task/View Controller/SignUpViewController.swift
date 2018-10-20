@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
     var user = User()
+    var handle: Auth?
     let signUpViewModel = SignUpViewModel()
     
     @IBOutlet weak var userEmail: UITextField!
@@ -26,6 +28,9 @@ class SignUpViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+            } as? Auth
         userEmail.text = ""
         userPassword.text = ""
         confirmUserPassword.text = ""
@@ -35,16 +40,27 @@ class SignUpViewController: UIViewController {
     @IBAction func signIn(_ sender: UIButton) {
         let isDataEmpty = setUserData()
         if(!isDataEmpty){
-            waitingSpinner.isHidden = false
-            signUpViewModel.checkIfUserExistAndSaveData(myUser: user){ userExists in
-                if userExists == "User Exists"{
-                    self.waitingSpinner.isHidden = true
-                    self.showWarning(warningMsg: userExists)
-                    return
-                } else {
-                    self.waitingSpinner.isHidden = true
-                    self.performSegue(withIdentifier: "signUpToCountries", sender: sender)
-                }
+//            waitingSpinner.isHidden = false
+//            signUpViewModel.checkIfUserExistAndSaveData(myUser: user){ userExists in
+//                if userExists == "User Exists"{
+//                    self.waitingSpinner.isHidden = true
+//                    self.showWarning(warningMsg: userExists)
+//                    return
+//                } else {
+//                    self.waitingSpinner.isHidden = true
+//                    self.performSegue(withIdentifier: "signUpToCountries", sender: sender)
+//                }
+//            }
+            
+            let email = userEmail.text!
+            
+            Auth.auth().createUser(withEmail: email, password: userPassword.text!) { (authResult, error) in
+                // ...
+                guard let myUser = authResult?.email else {
+                    self.showWarning(warningMsg: error!.localizedDescription)
+                    return }
+                print(myUser)
+                self.performSegue(withIdentifier: "signUpToCountries", sender: sender)
             }
         }
     }
@@ -53,16 +69,26 @@ class SignUpViewController: UIViewController {
         
         let isDataEmpty = setUserData()
         if(!isDataEmpty){
-            waitingSpinner.isHidden = false
-            signUpViewModel.checkIfUserExistAndSaveData(myUser: user){userExists in
-                if userExists == "User Exists" {
-                    self.waitingSpinner.isHidden = true
-                    self.showWarning(warningMsg: userExists)
-                    return
-                } else {
-                    self.waitingSpinner.isHidden = true
-                    self.dismiss(animated: true, completion: nil)
-                }
+//            waitingSpinner.isHidden = false
+//            signUpViewModel.checkIfUserExistAndSaveData(myUser: user){userExists in
+//                if userExists == "User Exists" {
+//                    self.waitingSpinner.isHidden = true
+//                    self.showWarning(warningMsg: userExists)
+//                    return
+//                } else {
+//                    self.waitingSpinner.isHidden = true
+//                    self.dismiss(animated: true, completion: nil)
+//                }
+//            }
+            let email = userEmail.text!
+            
+            Auth.auth().createUser(withEmail: email, password: userPassword.text!) { (authResult, error) in
+                // ...
+                guard let myUser = authResult?.email else {
+                    self.showWarning(warningMsg: error!.localizedDescription)
+                    return }
+                print(myUser)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -71,7 +97,8 @@ class SignUpViewController: UIViewController {
         
         if identifier == "signUpToCountries" {
             let storyboard = UIStoryboard(name: "CountriesStoryBoard", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "CountriesViewController") as UIViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "CountriesViewController") as! CountriesTableViewController
+            vc.fromSignUp = true
             present(vc, animated: true, completion: nil)
         }
     }
@@ -96,6 +123,13 @@ class SignUpViewController: UIViewController {
         let alert = UIAlertController(title: "Alert", message: warningMsg, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if (handle != nil){
+            Auth.auth().removeStateDidChangeListener(handle!)
+        }
+        
     }
 }
 

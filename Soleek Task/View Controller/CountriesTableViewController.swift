@@ -12,6 +12,7 @@ import SDWebImage
 
 class CountriesTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var fromSignUp = false
     var allCountries = [Country]()
     let countriesURL = "https://www.androidbegin.com/tutorial/jsonparsetutorial.txt"
     
@@ -34,7 +35,11 @@ class CountriesTableViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        if(fromSignUp){
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else{
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 }
@@ -44,12 +49,12 @@ class CountriesTableViewController: UIViewController {
 extension CountriesTableViewController: UITableViewDataSource {
     
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allCountries.count
     }
     
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         cell.textLabel?.text = allCountries[indexPath.row].name
         cell.imageView?.sd_setImage(with: URL(string: allCountries[indexPath.row].flag!), placeholderImage: UIImage(named: "appIcon.png"))
@@ -60,7 +65,7 @@ extension CountriesTableViewController: UITableViewDataSource {
 
 extension CountriesTableViewController: UITableViewDelegate {
     
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
 }
