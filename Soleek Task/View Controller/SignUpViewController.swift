@@ -25,6 +25,11 @@ class SignUpViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        userEmail.text = ""
+        userPassword.text = ""
+        confirmUserPassword.text = ""
+    }
     
     
     @IBAction func signIn(_ sender: UIButton) {

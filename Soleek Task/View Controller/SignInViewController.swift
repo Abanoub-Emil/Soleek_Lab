@@ -19,6 +19,10 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var userPassword: UITextField!
     
+    override func viewWillAppear(_ animated: Bool) {
+        userEmail.text = ""
+        userPassword.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
